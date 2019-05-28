@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Global S2I variable setup
-source `dirname "$0"`/s2i-setup
+#source `dirname "$0"`/s2i-setup
 
-${DEPLOYMENTS_DIR}/bin/nio-server -Dlogger.file=/deployments/nio/conf/prod-logger.xml  -Dcluster.akka.remote.netty.tcp.hostname="$(eval "awk 'END{print $1}' /etc/hosts")"  -Dcluster.akka.remote.netty.tcp.bind-hostname="$(eval "awk 'END{print $1}' /etc/hosts")"
+/deployments/nio/bin/nio-server -Dlogger.file=/deployments/nio/conf/prod-logger.xml  -Dcluster.akka.remote.netty.tcp.hostname="$(eval "awk 'END{print $1}' /etc/hosts")"  -Dcluster.akka.remote.netty.tcp.bind-hostname="$(eval "awk 'END{print $1}' /etc/hosts")"
